@@ -1,574 +1,100 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="ChrisLabs CloudOps - Console interativo de arquitetura, infraestrutura, automação, monitoramento e FinOps no Microsoft Azure."
-  >
-
-  <title>ChrisLabs CloudOps</title>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ChrisLabs CloudOps Console - Azure, Terraform, networking, FinOps e observabilidade.">
+  <title>ChrisLabs CloudOps Console</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
-
-  <!-- HEADER -->
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
   <header class="topbar">
-    <div class="brand">
-      <div class="brand-logo">CL</div>
-
-      <div>
-        <strong>ChrisLabs CloudOps</strong>
-        <span>Microsoft Azure Lab</span>
-      </div>
-    </div>
-
-    <div class="environment-status">
-      <span class="status-dot"></span>
-      Ambiente operacional
-    </div>
+    <a class="brand" href="#top" aria-label="ChrisLabs CloudOps"><span class="brand-mark">CL</span><span><b>ChrisLabs</b><small>CloudOps Console</small></span></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#operations">Operations</a><a href="#architecture">Arquitetura</a><a href="#pipeline">Pipeline</a><a href="#finops">FinOps</a>
+    </nav>
+    <div class="live-status"><i></i> LAB ONLINE</div>
   </header>
 
-
-  <!-- NAVEGAÇÃO -->
-  <nav class="navigation">
-    #dashboardDashboard</a>
-    #architectureArquitetura</a>
-    #pipelinePipeline</a>
-    #finopsFinOps</a>
-  </nav>
-
-
-  <main class="page-container">
-
-    <!-- INTRODUÇÃO -->
-    <section class="intro">
-      <div>
-        <span class="eyebrow">CHRISLABS CLOUDOPS</span>
-
-        <h1>
-          Console de Operações
-          <span>Azure</span>
-        </h1>
-
-        <p>
-          Visualização interativa da infraestrutura, automação,
-          segurança e decisões arquiteturais implementadas
-          no projeto ChrisLabs CloudOps.
-        </p>
+  <main id="top" class="shell">
+    <section class="hero reveal">
+      <div class="hero-copy">
+        <div class="kicker">AZURE · TERRAFORM · CLOUD OPERATIONS</div>
+        <h1>Infraestrutura que<br><span>mostra como funciona.</span></h1>
+        <p>Projeto de portfólio focado em Infrastructure as Code, arquitetura Azure, automação, segurança, FinOps e operação visual.</p>
+        <div class="hero-actions"><a class="btn primary" href="#architecture">Explorar arquitetura</a><a class="btn" href="#pipeline">Ver pipeline Terraform</a></div>
       </div>
-
-      <div class="azure-badge">
-        <span>AZURE</span>
-        <strong>CloudOps Lab</strong>
+      <div class="hero-visual" aria-label="Resumo de tecnologia">
+        <div class="orbit"><div class="cloud-core"><span>AZURE</span><b>CloudOps</b><small>Infrastructure Lab</small></div><i class="orb o1"></i><i class="orb o2"></i><i class="orb o3"></i></div>
       </div>
     </section>
 
-
-    <!-- DASHBOARD -->
-    <section id="dashboard">
-
-      <div class="section-title">
-        <div>
-          <span class="eyebrow">OPERAÇÕES</span>
-          <h2>Monitor de Recursos</h2>
-        </div>
-
-        <span class="live-indicator">
-          <span class="pulse"></span>
-          Ambiente Lab
-        </span>
+    <section id="operations" class="section reveal">
+      <div class="section-head"><div><span class="kicker">CLOUD OPERATIONS</span><h2>Estado do laboratório</h2></div><span class="hint">estado conhecido do projeto</span></div>
+      <div class="metrics">
+        <article class="metric"><div class="metric-top"><span>STATIC WEB APP</span><span class="pill ok"><i></i> ONLINE</span></div><b>Azure Static Web Apps</b><p>Frontend do projeto no plano Free.</p><footer><span>Hosting</span><strong>Managed</strong></footer></article>
+        <article class="metric"><div class="metric-top"><span>TERRAFORM STATE</span><span class="pill ok"><i></i> HEALTHY</span></div><b>Remote State</b><p>Backend remoto em Azure Storage.</p><footer><span>Backend</span><strong>AzureRM</strong></footer></article>
+        <article class="metric"><div class="metric-top"><span>NETWORK</span><span class="pill ok"><i></i> ACTIVE</span></div><b>Virtual Network</b><p>Segmentação com subnets e NSGs.</p><footer><span>Managed by</span><strong>Terraform</strong></footer></article>
+        <article class="metric"><div class="metric-top"><span>ENVIRONMENT</span><span class="pill info">LAB</span></div><b>ChrisLabs CloudOps</b><p>Ambiente de estudo e portfólio.</p><footer><span>Cost profile</span><strong>Low-cost</strong></footer></article>
       </div>
-
-
-      <div class="monitor-grid">
-
-        <article class="monitor-card">
-          <div class="monitor-header">
-            <span>WEBSITE</span>
-            <span class="status success">ONLINE</span>
-          </div>
-
-          <strong>Azure Static Web Apps</strong>
-
-          <p>
-            Hospedagem da aplicação ChrisLabs CloudOps.
-          </p>
-
-          <div class="metric-row">
-            <span>Plano</span>
-            <strong>Free</strong>
-          </div>
-        </article>
-
-
-        <article class="monitor-card">
-          <div class="monitor-header">
-            <span>INFRAESTRUTURA</span>
-            <span class="status success">ATIVA</span>
-          </div>
-
-          <strong>Terraform</strong>
-
-          <p>
-            Infraestrutura gerenciada como código.
-          </p>
-
-          <div class="metric-row">
-            <span>Gerenciamento</span>
-            <strong>IaC</strong>
-          </div>
-        </article>
-
-
-        <article class="monitor-card">
-          <div class="monitor-header">
-            <span>ESTADO</span>
-            <span class="status success">REMOTO</span>
-          </div>
-
-          <strong>Azure Storage</strong>
-
-          <p>
-            Estado remoto utilizado pelo Terraform.
-          </p>
-
-          <div class="metric-row">
-            <span>Backend</span>
-            <strong>AzureRM</strong>
-          </div>
-        </article>
-
-
-        <article class="monitor-card monitor-upcoming">
-          <div class="monitor-header">
-            <span>CI/CD</span>
-            <span class="status pending">PRÓXIMA FASE</span>
-          </div>
-
-          <strong>GitHub Actions</strong>
-
-          <p>
-            Automação de deployment da aplicação.
-          </p>
-
-          <div class="metric-row">
-            <span>Status</span>
-            <strong>Pendente</strong>
-          </div>
-        </article>
-
-      </div>
-
-      <p class="monitor-note">
-        Os indicadores acima representam o estado funcional conhecido do
-        laboratório. Métricas de telemetria em tempo real serão adicionadas
-        somente após a implementação da camada de observabilidade.
-      </p>
-
     </section>
 
+    <section id="architecture" class="section reveal">
+      <div class="section-head"><div><span class="kicker">LIVE ARCHITECTURE</span><h2>Arquitetura Azure</h2></div><span class="hint"><b>Hover</b> resume · <b>Click</b> detalha</span></div>
+      <div class="architecture-board">
+        <div class="arch-grid">
+          <button class="node n-internet" data-resource="internet"><span class="node-icon">◎</span><small>ENTRY POINT</small><b>Internet</b><span>Public access</span></button>
+          <div class="link l1"><i></i></div>
+          <button class="node n-swa" data-resource="staticwebapp"><span class="node-icon">☁</span><small>APPLICATION PLANE</small><b>Static Web Apps</b><span class="online"><i></i> ONLINE</span></button>
+          <div class="link l2"><i></i></div>
+          <button class="node n-app" data-resource="website"><span class="node-icon">⌘</span><small>FRONTEND</small><b>CloudOps Console</b><span>HTML · CSS · JS</span></button>
 
-    <!-- ARQUITETURA -->
-    <section id="architecture" class="architecture-section">
+          <button class="node terraform n-tf" data-resource="terraform"><span class="node-icon">◆</span><small>INFRASTRUCTURE AS CODE</small><b>Terraform</b><span>Provisioning</span></button>
+          <div class="link horizontal lh1"><i></i></div>
+          <button class="node n-rg" data-resource="resourcegroup"><span class="node-icon">▣</span><small>AZURE FOUNDATION</small><b>Resource Group</b><span>Resource boundary</span></button>
+          <div class="link horizontal lh2"><i></i></div>
+          <button class="node n-storage" data-resource="storage"><span class="node-icon">▱</span><small>STATE MANAGEMENT</small><b>Azure Storage</b><span>Remote tfstate</span></button>
 
-      <div class="section-title">
-        <div>
-          <span class="eyebrow">ARQUITETURA</span>
-          <h2>Infraestrutura Interativa</h2>
+          <div class="network-zone">
+            <div class="zone-label"><span>NETWORK LAB</span><b>Azure Virtual Network</b></div>
+            <button class="node n-vnet" data-resource="vnet"><span class="node-icon">◇</span><small>VIRTUAL NETWORK</small><b>VNet</b><span>Network foundation</span></button>
+            <div class="subnets">
+              <button class="node compact" data-resource="appsubnet"><small>SUBNET</small><b>snet-app</b><span class="pill ok">NSG</span></button>
+              <button class="node compact" data-resource="managementsubnet"><small>SUBNET</small><b>snet-management</b><span class="pill ok">NSG</span></button>
+            </div>
+          </div>
         </div>
-
-        <span class="interaction-hint">
-          Passe o mouse ou clique nos componentes
-        </span>
+        <p class="arch-caption">O diagrama representa a infraestrutura atualmente implementada no laboratório. Os fluxos animados são uma representação visual da relação entre os componentes.</p>
       </div>
-
-
-      <div class="architecture-canvas">
-
-        <!-- APPLICATION PLANE -->
-        <div class="architecture-zone application-zone">
-
-          <div class="zone-title">
-            <span>APPLICATION PLANE</span>
-            <strong>Aplicação Web</strong>
-          </div>
-
-
-          <div class="flow-vertical">
-
-            <button
-              type="button"
-              class="resource-node"
-              data-resource="internet"
-            >
-              <span class="resource-icon">◎</span>
-              <strong>Internet</strong>
-              <small>Acesso público</small>
-            </button>
-
-            <div class="flow-arrow">↓</div>
-
-
-            <button
-              type="button"
-              class="resource-node primary-node"
-              data-resource="staticwebapp"
-            >
-              <span class="resource-icon">☁</span>
-              <strong>Azure Static Web Apps</strong>
-              <small>Free Tier • East US 2</small>
-            </button>
-
-            <div class="flow-arrow">↓</div>
-
-
-            <button
-              type="button"
-              class="resource-node"
-              data-resource="website"
-            >
-              <span class="resource-icon">&lt;/&gt;</span>
-              <strong>ChrisLabs CloudOps</strong>
-              <small>HTML • CSS • JavaScript</small>
-            </button>
-
-          </div>
-
-        </div>
-
-
-        <!-- MANAGEMENT PLANE -->
-        <div class="architecture-zone management-zone">
-
-          <div class="zone-title">
-            <span>MANAGEMENT PLANE</span>
-            <strong>Infrastructure as Code</strong>
-          </div>
-
-
-          <div class="resource-grid">
-
-            <button
-              type="button"
-              class="resource-node terraform-node"
-              data-resource="terraform"
-            >
-              <span class="resource-icon">◆</span>
-              <strong>Terraform</strong>
-              <small>Infrastructure as Code</small>
-            </button>
-
-
-            <button
-              type="button"
-              class="resource-node"
-              data-resource="storage"
-            >
-              <span class="resource-icon">▤</span>
-              <strong>Azure Storage</strong>
-              <small>Terraform Remote State</small>
-            </button>
-
-
-            <button
-              type="button"
-              class="resource-node"
-              data-resource="resourcegroup"
-            >
-              <span class="resource-icon">▣</span>
-              <strong>Resource Group</strong>
-              <small>ChrisLabs CloudOps Lab</small>
-            </button>
-
-          </div>
-
-        </div>
-
-
-        <!-- NETWORK LAB -->
-        <div class="architecture-zone network-zone">
-
-          <div class="zone-title">
-            <span>NETWORK LAB</span>
-            <strong>Fundação de Rede Azure</strong>
-          </div>
-
-
-          <button
-            type="button"
-            class="resource-node wide-node"
-            data-resource="vnet"
-          >
-            <span class="resource-icon">⬡</span>
-            <strong>Azure Virtual Network</strong>
-            <small>vnet-chrislabs-cloudops-lab</small>
-          </button>
-
-
-          <div class="network-subnets">
-
-            <button
-              type="button"
-              class="resource-node subnet-node"
-              data-resource="appsubnet"
-            >
-              <span class="resource-icon">▦</span>
-              <strong>snet-app</strong>
-              <small>Application Subnet</small>
-
-              <span class="mini-badge">
-                NSG associado
-              </span>
-            </button>
-
-
-            <button
-              type="button"
-              class="resource-node subnet-node"
-              data-resource="managementsubnet"
-            >
-              <span class="resource-icon">▦</span>
-              <strong>snet-management</strong>
-              <small>Management Subnet</small>
-
-              <span class="mini-badge">
-                NSG associado
-              </span>
-            </button>
-
-          </div>
-
-
-          <p class="architecture-note">
-            A rede representa a fundação de infraestrutura construída
-            durante o laboratório. O Azure Static Web Apps não está
-            representado como hospedado dentro dessas sub-redes.
-          </p>
-
-        </div>
-
-      </div>
-
     </section>
 
-
-    <!-- PIPELINE -->
-    <section id="pipeline">
-
-      <div class="section-title">
-        <div>
-          <span class="eyebrow">AUTOMAÇÃO</span>
-          <h2>Fluxo de Infraestrutura</h2>
-        </div>
+    <section id="pipeline" class="section reveal">
+      <div class="section-head"><div><span class="kicker">TERRAFORM WORKFLOW</span><h2>Do código ao Azure</h2></div><span class="hint">pipeline operacional</span></div>
+      <div class="pipeline" aria-label="Terraform workflow">
+        <button data-resource="code" class="pipe"><span>01</span><b>CODE</b><small>Define infrastructure</small></button><div class="rail"><i></i></div>
+        <button data-resource="validate" class="pipe"><span>02</span><b>VALIDATE</b><small>Check configuration</small></button><div class="rail"><i></i></div>
+        <button data-resource="plan" class="pipe"><span>03</span><b>PLAN</b><small>Review changes</small></button><div class="rail"><i></i></div>
+        <button data-resource="apply" class="pipe"><span>04</span><b>APPLY</b><small>Execute changes</small></button><div class="rail"><i></i></div>
+        <button data-resource="azure" class="pipe azure"><span>05</span><b>AZURE</b><small>Managed resources</small></button>
       </div>
-
-
-      <div class="pipeline">
-
-        <button
-          type="button"
-          class="pipeline-step"
-          data-resource="code"
-        >
-          <span>01</span>
-          <strong>CODE</strong>
-          <small>Terraform</small>
-        </button>
-
-        <div class="pipeline-arrow">→</div>
-
-
-        <button
-          type="button"
-          class="pipeline-step"
-          data-resource="validate"
-        >
-          <span>02</span>
-          <strong>VALIDATE</strong>
-          <small>Validação</small>
-        </button>
-
-        <div class="pipeline-arrow">→</div>
-
-
-        <button
-          type="button"
-          class="pipeline-step"
-          data-resource="plan"
-        >
-          <span>03</span>
-          <strong>PLAN</strong>
-          <small>Revisão</small>
-        </button>
-
-        <div class="pipeline-arrow">→</div>
-
-
-        <button
-          type="button"
-          class="pipeline-step"
-          data-resource="apply"
-        >
-          <span>04</span>
-          <strong>APPLY</strong>
-          <small>Deployment</small>
-        </button>
-
-        <div class="pipeline-arrow">→</div>
-
-
-        <button
-          type="button"
-          class="pipeline-step azure-step"
-          data-resource="azure"
-        >
-          <span>05</span>
-          <strong>AZURE</strong>
-          <small>Infraestrutura</small>
-        </button>
-
-      </div>
-
     </section>
 
-
-    <!-- FINOPS -->
-    <section id="finops">
-
-      <div class="section-title">
-        <div>
-          <span class="eyebrow">DECISÃO ARQUITETURAL</span>
-          <h2>FinOps na prática</h2>
-        </div>
+    <section id="finops" class="section reveal">
+      <div class="section-head"><div><span class="kicker">FINOPS DECISION</span><h2>Arquitetura guiada por custo</h2></div><span class="hint">decisão real do projeto</span></div>
+      <div class="decision">
+        <article><span class="num">01</span><small>ORIGINAL OPTION</small><b>Azure App Service</b><p>Abordagem inicialmente avaliada.</p></article><div class="decision-arrow">→</div>
+        <article class="warn"><span class="num">02</span><small>CONSTRAINT</small><b>Quota limitation</b><p>Restrição encontrada durante o laboratório.</p></article><div class="decision-arrow">→</div>
+        <article><span class="num">03</span><small>REVIEW</small><b>Cost & fit</b><p>Revisão da alternativa alinhada ao objetivo.</p></article><div class="decision-arrow">→</div>
+        <article class="chosen"><span class="num">04</span><small>SELECTED</small><b>Static Web Apps Free</b><p>Hospedagem escolhida para o frontend.</p><span class="pill ok"><i></i> IMPLEMENTADO</span></article>
       </div>
-
-
-      <div class="decision-flow">
-
-        <div class="decision-card rejected">
-          <span>01</span>
-
-          <strong>App Service F1</strong>
-
-          <small>Quota indisponível</small>
-        </div>
-
-        <div class="decision-arrow">→</div>
-
-
-        <div class="decision-card rejected">
-          <span>02</span>
-
-          <strong>App Service B1</strong>
-
-          <small>Quota indisponível</small>
-        </div>
-
-        <div class="decision-arrow">→</div>
-
-
-        <div class="decision-card review">
-          <span>03</span>
-
-          <strong>Reavaliação</strong>
-
-          <small>Arquitetura + custo</small>
-        </div>
-
-        <div class="decision-arrow">→</div>
-
-
-        <div class="decision-card selected">
-          <span>04</span>
-
-          <strong>Static Web Apps</strong>
-
-          <small>Free Tier ✓</small>
-        </div>
-
-      </div>
-
     </section>
-
   </main>
 
+  <footer class="site-footer"><div><b>ChrisLabs CloudOps</b><span>Azure · Terraform · Infrastructure · Automation</span></div><span>Portfolio Lab</span></footer>
 
-  <!-- TOOLTIP -->
-  <div
-    id="tooltip"
-    class="tooltip"
-    role="tooltip"
-  ></div>
-
-
-  <!-- MODAL -->
-  <div
-    id="resourceModal"
-    class="modal"
-    aria-hidden="true"
-  >
-
-    <div class="modal-overlay"></div>
-
-    <div
-      class="modal-panel"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="modalTitle"
-    >
-
-      <button
-        type="button"
-        id="modalClose"
-        class="modal-close"
-        aria-label="Fechar painel"
-      >
-        ×
-      </button>
-
-      <span
-        id="modalCategory"
-        class="eyebrow"
-      ></span>
-
-      <h2 id="modalTitle"></h2>
-
-      <p id="modalDescription"></p>
-
-      <div id="modalDetails"></div>
-
-      <div class="modal-status">
-        <span>Status</span>
-        <strong id="modalStatus"></strong>
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- FOOTER -->
-  <footer>
-    <div>
-      <strong>ChrisLabs CloudOps</strong>
-
-      <span>
-        Microsoft Azure • Terraform • CloudOps
-      </span>
-    </div>
-
-    <span>
-      Desenvolvido por Christian Valente
-    </span>
-  </footer>
-
-
-  <script src="script.js"></script>
-
+  <div id="tooltip" class="tooltip" role="tooltip" aria-hidden="true"></div>
+  <div id="resourceModal" class="modal" aria-hidden="true"><div class="modal-overlay" data-close-modal></div><section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button id="modalClose" aria-label="Fechar">×</button><div id="modalCategory" class="kicker"></div><h2 id="modalTitle"></h2><p id="modalDescription"></p><div id="modalDetails"></div><div class="modal-foot"><span>Status</span><strong id="modalStatus"></strong></div></section></div>
 </body>
 </html>
