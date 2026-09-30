@@ -22,3 +22,8 @@ output "management_subnet_id" {
   description = "Resource ID of the management subnet."
   value       = azurerm_subnet.management.id
 }
+
+output "static_web_app_hostname" {
+  description = "Default hostname of the ChrisLabs CloudOps Static Web App."
+  value       = azurerm_static_web_app.cloudops.default_host_name
+}
